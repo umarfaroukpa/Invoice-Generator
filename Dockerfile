@@ -1,17 +1,18 @@
+# Use official PHP + Apache image
 FROM php:8.3-apache
 
 # Install required extensions
 RUN apt-get update && apt-get install -y \
     libzip-dev \
-    && docker-php-ext-install zip
+    && docker-php-ext-install zip mysqli pdo pdo_mysql
 
-# Enable mod_rewrite
+# Enable Apache mod_rewrite
 RUN a2enmod rewrite
 
 # Set working directory
 WORKDIR /var/www/html
 
-# Copy all project files
+# Copy project files
 COPY . /var/www/html
 
 # Install Composer dependencies
@@ -21,4 +22,5 @@ RUN composer install --no-dev --optimize-autoloader
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html
 
+# Expose port
 EXPOSE 80
