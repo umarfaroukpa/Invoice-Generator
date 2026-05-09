@@ -22,7 +22,8 @@ $html = '
     <style>
         body { 
             font-family: Arial, sans-serif; 
-            margin: 40px; 
+            margin: 30px 40px; 
+            line-height: 1.5; 
         }
         h1 { text-align: center; color: #2c3e50; }
         .info { display: flex; justify-content: space-between; margin: 30px 0; }
@@ -30,6 +31,12 @@ $html = '
         th, td { padding: 12px; border-bottom: 1px solid #ddd; }
         th { background-color: #f4f4f4; }
         .total { text-align: right; font-size: 1.4em; margin-top: 40px; font-weight: bold; }
+
+        html, body {
+        height: auto;
+        margin: 0;
+        padding: 0;
+    }
     </style>
 </head>
 <body>

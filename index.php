@@ -9,8 +9,11 @@
 <body>
 
 <main>
+    // invoice-favicon
+    <link rel="icon" type="image/png" href="resources/favicon.png">
+
     <div class="logo">
-        <img src="invoice.png" alt="Invoice Logo" class="invoice-logo">
+        <img src="resources/logo.png" alt="Invoice Logo" class="invoice-logo">
     </div>
 
     <header>
