@@ -12,6 +12,11 @@ if (!isset($_SESSION['invoice_data'])) {
 
 $data = $_SESSION['invoice_data'];
 
+// Currency function for PDF
+function formatCurrencyPDF($amount) {
+    return 'NGN ' . number_format((float)$amount, 2);
+}
+
 // Build HTML for PDF
 $html = '
 <!DOCTYPE html>
@@ -19,29 +24,29 @@ $html = '
 <head>
     <meta charset="UTF-8">
     <title>Invoice ' . htmlspecialchars($data['invoice_number']) . '</title>
-   <style>
+    <style>
         body { 
             font-family: Arial, sans-serif; 
             margin: 35px 45px; 
-            line-height: 1.4;
+            line-height: 1.5;
         }
         h1 { 
             text-align: center; 
             color: #2c3e50; 
-            margin-bottom: 25px; 
+            margin-bottom: 30px; 
         }
         .info { 
             display: flex; 
             justify-content: space-between; 
-            margin: 25px 0; 
+            margin: 30px 0; 
         }
         table { 
             width: 100%; 
             border-collapse: collapse; 
-            margin: 20px 0; 
+            margin: 25px 0; 
         }
         th, td { 
-            padding: 10px; 
+            padding: 12px; 
             border-bottom: 1px solid #ddd; 
         }
         th { 
@@ -49,11 +54,10 @@ $html = '
         }
         .total { 
             text-align: right; 
-            font-size: 1.35em; 
-            margin-top: 30px; 
+            font-size: 1.4em; 
+            margin-top: 40px; 
             font-weight: bold; 
         }
-        img { max-width: 180px; }
     </style>
 </head>
 <body>
@@ -91,15 +95,15 @@ foreach($data['items'] as $item) {
         <tr>
             <td>' . htmlspecialchars($item['name']) . '</td>
             <td style="text-align:center;">' . $item['quantity'] . '</td>
-            <td style="text-align:right;">NGN ' . number_format($item['price'], 2) . '</td>
-            <td style="text-align:right;">NGN ' . number_format($item['line_total'], 2) . '</td>
+            <td style="text-align:right;">' . formatCurrencyPDF($item['price']) . '</td>
+            <td style="text-align:right;">' . formatCurrencyPDF($item['line_total']) . '</td>
         </tr>';
 }
 
 $html .= '
     </table>
     <div class="total">
-        Grand Total: NGN ' . number_format($data['grand_total'], 2) . '
+        Grand Total: ' . formatCurrencyPDF($data['grand_total']) . '
     </div>
 </body>
 </html>';

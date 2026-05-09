@@ -7,7 +7,12 @@ require_once 'vendor/autoload.php';
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
-//  Get Form Data
+// Currency Formatting Function
+function formatCurrency($amount, $symbol = '₦') {
+    return $symbol . number_format((float)$amount, 2);
+}
+
+//Get Form Data 
 $data = [
     'supplier_name'    => $_POST['supplier_name'] ?? 'Not Provided',
     'supplier_address' => $_POST['supplier_address'] ?? '',
@@ -72,8 +77,6 @@ $_SESSION['invoice_data'] = $data;
         }
         .btn-print { background: #b59e7d; color: white; }
         .btn-pdf   { background: #708090; color: white; }
-        .btn-print:hover { background: #aaa396; }
-        .btn-pdf:hover { background: #aaa396; }
     </style>
 </head>
 <body>
@@ -113,14 +116,14 @@ $_SESSION['invoice_data'] = $data;
         <tr>
             <td><?= htmlspecialchars($item['name']) ?></td>
             <td><?= $item['quantity'] ?></td>
-            <td>₦<?= number_format($item['price'], 2) ?></td>
-            <td>₦<?= number_format($item['line_total'], 2) ?></td>
+            <td><?= formatCurrency($item['price']) ?></td>
+            <td><?= formatCurrency($item['line_total']) ?></td>
         </tr>
         <?php endforeach; ?>
     </table>
 
     <div class="total">
-        Grand Total: ₦<?= number_format($data['grand_total'], 2) ?>
+        Grand Total: <?= formatCurrency($data['grand_total']) ?>
     </div>
 
     <!-- Buttons -->
