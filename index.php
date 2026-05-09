@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice Generator</title>
-     // invoice-favicon
-    <link rel="icon" type="image/png" href="resources/favicon.png">
-    // Main CSS
+    
+    <!-- Favicon -->
+    <<link rel="icon" type="image/png" sizes="32x32" href="resources/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/favicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="resources/favicon.png">
+    
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
