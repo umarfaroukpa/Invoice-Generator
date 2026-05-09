@@ -70,8 +70,10 @@ $_SESSION['invoice_data'] = $data;
             font-size: 1.1em; 
             cursor: pointer; 
         }
-        .btn-print { background: #3498db; color: white; }
-        .btn-pdf   { background: #27ae60; color: white; }
+        .btn-print { background: #b59e7d; color: white; }
+        .btn-pdf   { background: #708090; color: white; }
+        .btn-print:hover { background: #aaa396; }
+        .btn-pdf:hover { background: #aaa396; }
     </style>
 </head>
 <body>
