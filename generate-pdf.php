@@ -19,24 +19,41 @@ $html = '
 <head>
     <meta charset="UTF-8">
     <title>Invoice ' . htmlspecialchars($data['invoice_number']) . '</title>
-    <style>
+   <style>
         body { 
             font-family: Arial, sans-serif; 
-            margin: 30px 40px; 
-            line-height: 1.5; 
+            margin: 35px 45px; 
+            line-height: 1.4;
         }
-        h1 { text-align: center; color: #2c3e50; }
-        .info { display: flex; justify-content: space-between; margin: 30px 0; }
-        table { width: 100%; border-collapse: collapse; margin: 25px 0; }
-        th, td { padding: 12px; border-bottom: 1px solid #ddd; }
-        th { background-color: #f4f4f4; }
-        .total { text-align: right; font-size: 1.4em; margin-top: 40px; font-weight: bold; }
-
-        html, body {
-        height: auto;
-        margin: 0;
-        padding: 0;
-    }
+        h1 { 
+            text-align: center; 
+            color: #2c3e50; 
+            margin-bottom: 25px; 
+        }
+        .info { 
+            display: flex; 
+            justify-content: space-between; 
+            margin: 25px 0; 
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 20px 0; 
+        }
+        th, td { 
+            padding: 10px; 
+            border-bottom: 1px solid #ddd; 
+        }
+        th { 
+            background-color: #f4f4f4; 
+        }
+        .total { 
+            text-align: right; 
+            font-size: 1.35em; 
+            margin-top: 30px; 
+            font-weight: bold; 
+        }
+        img { max-width: 180px; }
     </style>
 </head>
 <body>

@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Invoice Generator</title>
+     // invoice-favicon
+    <link rel="icon" type="image/png" href="resources/favicon.png">
+    // Main CSS
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <main>
-    // invoice-favicon
-    <link rel="icon" type="image/png" href="resources/favicon.png">
 
     <div class="logo">
         <img src="resources/logo.png" alt="Invoice Logo" class="invoice-logo">
