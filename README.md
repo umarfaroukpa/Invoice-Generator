@@ -1,4 +1,4 @@
-# Mini Invoice Generator
+# Invoice Generator
 
 A simple PHP invoice generator built to practice backend development with PHP.
 
@@ -73,6 +73,9 @@ During this project, I practiced:
 - Save invoices to database
 - Customer invoice history
 - Print invoice option
+
+## Live Project at 
+https://invoice-generator-orqp.onrender.com
 
 ## Author
 
